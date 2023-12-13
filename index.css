@@ -1,59 +1,41 @@
-.heading{
-    display: flex;
-    justify-content: space-between;
-    border: 2px solid black;
-    padding: 10px;
+.brandlogo{
+    width: 10rem;
 }
-.logo{
-    padding: 10px;
-    width: 100px;
-    height: 50px;
-    margin-top: 30px;
-}
-.nav-items{
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-}
-.nav-items  li{
-    margin: 40px;
-    font-size: larger;
-}
-.res-container{
-    margin: 50px;
-    display: flex;
-    flex-wrap: wrap;
-
-}
-.res-card{
-    width: 300px;
-    background-color: #9b9c9eaa;
-    padding: 10px;
-    margin: 10px;
-}
-.res-card:hover{
-    border: 1px solid black;
-    cursor: pointer;
-}
-.res-img{
-    width: 100%;
-}
-.body{
-    margin: 10px;
-}
-.shimmer-container{
-    margin: 50px;
-    display: flex;
-    flex-wrap: wrap;
+.card:hover{
+    transform: scale(95%);
 }
 .shimmer-card{
     background-color: #c6c6c6;
-    width: 250px;
-    height: 350px;
-    padding: 5px;
-    margin: 5px;
+    width: 180px;
+    height: 200px;
 }
-.filter{
-    display: flex;
-    justify-content: space-evenly;
+.cardimgg{
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
 }
+.divinsideelement{
+    background-color: #c6c6c6;
+    height: 50px;
+}
+@media (min-width:300px){
+    .bodycontainer,
+    .shimmer-container,
+    .contactuspage{
+        margin-top: 110px;
+    }
+ }
+ @media(max-width:991px){
+    .bodycontainer .topresbtn,
+    .shimmer-container .topresbtn
+    {
+        display: none;
+    } 
+}
+ @media screen and (min-width:991px) {
+    .bodycontainer .topresbtn,
+    .shimmer-container .topresbtn{
+        display: block;
+    }
+}
+

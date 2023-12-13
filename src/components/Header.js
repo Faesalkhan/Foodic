@@ -1,30 +1,56 @@
-import { useState } from "react";
 import { LOGO_URL } from "../utils/constants";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  const [btnlogin, setBtnlogin] = useState("login");
-
+  const onlinestat = useOnlineStatus();
   return (
-    <div className="heading">
+    <nav className="navbar navbar-expand-md bg-light fixed-top">
       <img
-        className="logo"
-        src="https://upload.wikimedia.org/wikipedia/commons/5/52/Free_logo.svg"
+        src={LOGO_URL}
+        className="navbar-brand img-fluid brandlogo "
+        alt=""
       />
-      <ul className="nav-items">
-        <li>Home</li>
-        <li>About us</li>
-        <li>Categories</li>
-        <li>Contact us</li>
-        <button
-          className="btn-login"
-          onClick={() => {
-            btnlogin === "login" ? setBtnlogin("logout") : setBtnlogin("login");
-          }}
-        >
-          {btnlogin}
-        </button>
-      </ul>
-    </div>
+      <button
+        type="button"
+        className="navbar-toggler"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarContent"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarContent">
+        <ul className="navbar-nav text-center ms-auto me-2">
+          <li className="nav-item">
+            <Link className="nav-link" to="">
+              Online status :{onlinestat ? "🟢" : "🔴"}
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/">
+              Home
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/">
+              About us
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/contact">
+              Contact us
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/login">
+              <button type="button" className="btn btn-danger">
+                Login
+              </button>
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 };
 export default Header;
