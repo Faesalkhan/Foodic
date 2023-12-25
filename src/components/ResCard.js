@@ -1,5 +1,4 @@
-//
-
+import { Link } from "react-router-dom";
 import { LIST_IMG } from "../utils/constants";
 
 const ResCard = (props) => {
@@ -7,7 +6,10 @@ const ResCard = (props) => {
   const { name, cuisines, areaName, cloudinaryImageId, avgRating, sla } =
     resData?.info;
   return (
-    <div className="col-sm-6 col-md-4 col-lg-2 p-2 m-2">
+    <Link
+      to={"/restaurant/" + resData?.info?.id}
+      className="col-sm-6 col-md-4 col-lg-2 p-2 m-2 text-decoration-none "
+    >
       <div className="card border-0 ">
         <img
           src={LIST_IMG + cloudinaryImageId}
@@ -23,7 +25,7 @@ const ResCard = (props) => {
         </p>
         <p className="my-0">{cuisines.join(", ")}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 export default ResCard;

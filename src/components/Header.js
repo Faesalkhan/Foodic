@@ -1,8 +1,10 @@
 import { LOGO_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const cartItems = useSelector((store) => store.cart.items);
   const onlinestat = useOnlineStatus();
   return (
     <nav className="navbar navbar-expand-md bg-light fixed-top">
@@ -32,7 +34,12 @@ const Header = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/">
+            <Link className="nav-link" to="/cart">
+              Cart({cartItems.length})
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/about">
               About us
             </Link>
           </li>

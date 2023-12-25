@@ -14,6 +14,17 @@
     height: 30vh;
     object-fit: cover;
 }
+.float-end{
+    width: 200px;
+    height: auto;
+}
+strong{
+    background-color: #25f575;
+    padding: 2px;
+}
+.lightweightfont{
+    font-weight: lighter;
+}
 .divinsideelement{
     background-color: #c6c6c6;
     height: 50px;
@@ -21,7 +32,11 @@
 @media (min-width:300px){
     .bodycontainer,
     .shimmer-container,
-    .contactuspage{
+    .contactuspage,
+    .resmenucontainer,
+    .cart-container,
+    .cartItemmcontainer,
+    .aboutus-container{
         margin-top: 110px;
     }
  }
@@ -38,4 +53,6 @@
         display: block;
     }
 }
-
+.no-wrap{
+    white-space: nowrap;
+}
