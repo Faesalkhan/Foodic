@@ -1,0 +1,58 @@
+{
+    "info":
+    {
+        "id": "91098",
+        "name": "Safa Restaurant",
+        "cloudinaryImageId": "aybd1pwybloosvpkwl4y",
+        "locality": "Naralibag",
+        "areaName": "Shahgunj",
+        "costForTwo": "₹200 for two",
+        "cuisines": [
+            "North Indian",
+            "Mughlai",
+            "Chinese",
+            "Biryani"
+        ],
+        "avgRating": 4.1,
+        "parentId": "174312",
+        "avgRatingString": "4.1",
+        "totalRatingsString": "10K+",
+        "sla": {
+            "deliveryTime": 22,
+            "lastMileTravel": 3,
+            "serviceability": "SERVICEABLE",
+            "slaString": "20-25 mins",
+            "lastMileTravelString": "3.0 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2023-12-26 23:59:00",
+            "opened": true
+        },
+        "badges": {},
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {},
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "ITEMS",
+            "subHeader": "AT ₹129"
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    }
+}
