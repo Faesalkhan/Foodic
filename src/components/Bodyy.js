@@ -19,6 +19,7 @@ const Bodyy = () => {
       <div className="row mb-3 justify-content-center p-2">
         <input
           type="text"
+          data-testid="searchInput"
           className="col-4 me-3"
           value={text}
           onChange={(e) => setText(e.target.value)}

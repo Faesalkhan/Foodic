@@ -7,6 +7,7 @@ const ResCard = (props) => {
     resData?.info;
   return (
     <Link
+      data-testid="rescard"
       to={"/restaurant/" + resData?.info?.id}
       className="col-sm-6 col-md-4 col-lg-2 p-2 m-2 text-decoration-none "
     >

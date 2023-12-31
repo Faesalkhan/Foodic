@@ -8,7 +8,7 @@ const CartItemm = ({ cartMenu }) => {
     dispatch(removeItem(itemId));
   };
   return (
-    <div className="col-sm-12 col-lg-8 m-2">
+    <div className="col-sm-12 col-lg-8 m-2" data-testid="cartItems">
       <div className="row border p-2">
         <div className="col-6">
           <h5>{cartMenu?.name}</h5>
