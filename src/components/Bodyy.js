@@ -16,11 +16,11 @@ const Bodyy = () => {
 
   return (
     <div className="container bodycontainer">
-      <div className="row mb-3 justify-content-center p-2">
+      <div className="row justify-content-center">
         <input
           type="text"
           data-testid="searchInput"
-          className="col-4 me-3"
+          className="col-4 mx-2"
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
@@ -43,7 +43,7 @@ const Bodyy = () => {
           className="col-3 btn btn-outline-primary ms-2 topresbtn"
           onClick={() => {
             const filteredlist = listRest.filter(
-              (res) => res?.info?.avgRating >= 4
+              (res) => res?.info?.avgRating >= 4.3
             );
             setFilteringList(filteredlist);
           }}

@@ -7,7 +7,7 @@ const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
   const onlinestat = useOnlineStatus();
   return (
-    <nav className="navbar navbar-expand-md bg-light fixed-top">
+    <nav className="navbar navbar-expand-lg bg-light fixed-top">
       <img
         src={LOGO_URL}
         className="navbar-brand img-fluid brandlogo "
@@ -24,32 +24,32 @@ const Header = () => {
       <div className="collapse navbar-collapse" id="navbarContent">
         <ul className="navbar-nav text-center ms-auto me-2">
           <li className="nav-item">
-            <Link className="nav-link" to="">
+            <Link className="nav-link px-4" to="">
               Online status :{onlinestat ? "🟢" : "🔴"}
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/">
+            <Link className="nav-link px-4" to="/">
               Home
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/cart">
+            <Link className="nav-link px-4" to="/cart">
               Cart({cartItems.length})
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/about">
+            <Link className="nav-link px-4" to="/about">
               About us
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/contact">
+            <Link className="nav-link px-4" to="/contact">
               Contact us
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/login">
+            <Link className="px-4" to="/login">
               <button type="button" className="btn btn-danger">
                 Login
               </button>

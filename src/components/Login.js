@@ -2,7 +2,7 @@ const Login = () => {
   return (
     <div className="container my-5">
       <div className="row justify-content-center">
-        <div className="col-6 bg-light py-5">
+        <div className="col-sm-10 col-md-8 col-lg-6 bg-light py-5">
           <h2 className="text-center">Login</h2>
           <label htmlFor="email" className="form-label my-3">
             Email

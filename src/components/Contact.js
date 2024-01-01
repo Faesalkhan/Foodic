@@ -2,7 +2,7 @@ const Contact = () => {
   return (
     <div className="container contactuspage">
       <div className="row justify-content-center">
-        <div className="col-6">
+        <div className="col-sm-10 col-md-8 col-lg-6">
           <form action="">
             <h2>Contact Us</h2>
             <label htmlFor="name" className="form-label"></label>
