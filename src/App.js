@@ -1,29 +1,28 @@
-import ReactDOM from "react-dom/client";
-import Header from "./components/Header";
+import React from "react";
 import "./bootstrap";
+import ReactDOM from "react-dom/client";
 import Bodyy from "./components/Bodyy";
-import Error from "./components/Error";
+import Header from "./components/Header";
+import About from "./components/About";
 import Contact from "./components/Contact";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Login from "./components/Login";
 import ResMenu from "./components/ResMenu";
+import Error from "./components/Error";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
-import About from "./components/About";
-
 const App = () => {
   return (
     <Provider store={appStore}>
-      <div className="applayout">
+      <div id="applayout">
         <Header />
         <Outlet />
       </div>
     </Provider>
   );
 };
-
-const appRoute = createBrowserRouter([
+const approuter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
@@ -34,11 +33,7 @@ const appRoute = createBrowserRouter([
         element: <Bodyy />,
       },
       {
-        path: "/contact",
-        element: <Contact />,
-      },
-      {
-        path: "/restaurant/:resId",
+        path: "/restaurant/:restaurantID",
         element: <ResMenu />,
       },
       {
@@ -49,13 +44,16 @@ const appRoute = createBrowserRouter([
         path: "/about",
         element: <About />,
       },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
     ],
   },
-  {
-    path: "/login",
-    element: <Login />,
-  },
 ]);
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRoute} />);
+root.render(<RouterProvider router={approuter} />);

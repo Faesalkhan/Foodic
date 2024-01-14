@@ -1,64 +1,72 @@
-import { useState } from "react";
-import ResCard from "./ResCard";
+import React, { useEffect, useState } from "react";
 import { SWIGGY_API_URL } from "../utils/constants";
-import useFetchData from "../utils/useFetchData";
 import Shimmer from "./Shimmer";
+import ResCard from "./ResCard";
 
 const Bodyy = () => {
-  const [text, setText] = useState("");
-  const [filteringList, setFilteringList] = useState(null);
+  const [list, setList] = useState([]);
+  const [allList, setAllList] = useState([]);
+  const [search, setSearch] = useState("");
+  const handleSearch = (ch) => {
+    setSearch(ch);
 
-  const [listRest, allListRest] = useFetchData(SWIGGY_API_URL);
-
-  if (allListRest.length === 0) {
+    setAllList(
+      list.filter((res) =>
+        res.info.name.toLowerCase().includes(search.toLowerCase())
+      )
+    );
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+  const fetchData = async () => {
+    try {
+      const data = await fetch(SWIGGY_API_URL);
+      const json = await data.json();
+      setList(
+        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+          ?.restaurants
+      );
+    } catch (err) {
+      setList([]);
+      console.log("error in fetching : " + err);
+    }
+  };
+  if (list.length === 0) {
     return <Shimmer />;
-  }
-
-  return (
-    <div className="container bodycontainer">
-      <div className="row justify-content-center">
-        <input
-          type="text"
-          data-testid="searchInput"
-          className="col-4 mx-2"
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-        />
-
-        <button
-          type="button"
-          className="col-2 p-1 btn btn-outline-primary"
-          onClick={() => {
-            const btnfilter = listRest.filter((ress) =>
-              ress.info.name.toLowerCase().includes(text.toLowerCase())
-            );
-            setFilteringList(btnfilter);
-          }}
-        >
-          Search
-        </button>
-
-        <button
-          type="button"
-          className="col-3 btn btn-outline-primary ms-2 topresbtn"
-          onClick={() => {
-            const filteredlist = listRest.filter(
-              (res) => res?.info?.avgRating >= 4.3
-            );
-            setFilteringList(filteredlist);
-          }}
-        >
-          Ratings 4+
-        </button>
+  } else
+    return (
+      <div className="container bodycontainer">
+        <div className="row justify-content-center my-4">
+          <input
+            className="col-4 mx-2"
+            placeholder="search restaurant..."
+            value={search}
+            onChange={(e) => handleSearch(e.target.value)}
+          ></input>
+          <button
+            className="col-1 btn btn-light mx-2 border-dark rounded-5 filterbutton"
+            onClick={() =>
+              setAllList(list.filter((res) => res.info.avgRating > 4))
+            }
+          >
+            4+
+          </button>
+          <button
+            className="col-1 btn btn-light mx-2 border-dark rounded-5 filterbutton"
+            onClick={() =>
+              setAllList(list.filter((res) => res.info.avgRating <= 4))
+            }
+          >
+            3+
+          </button>
+        </div>
+        <div className="row">
+          {(allList.length !== 0 ? allList : list).map((restaurant) => (
+            <ResCard key={restaurant?.info?.id} card={restaurant} />
+          ))}
+        </div>
       </div>
-      <div className="row justify-content-center flex-wrap">
-        {(filteringList === null ? allListRest : filteringList).map(
-          (restaurant) => (
-            <ResCard key={restaurant.info.id} resData={restaurant} />
-          )
-        )}
-      </div>
-    </div>
-  );
+    );
 };
 export default Bodyy;
