@@ -38,12 +38,21 @@ const Bodyy = () => {
     return (
       <div className="container bodycontainer">
         <div className="row justify-content-center my-4">
-          <input
-            className="col-4 mx-2"
-            placeholder="search restaurant..."
-            value={search}
-            onChange={(e) => handleSearch(e.target.value)}
-          ></input>
+          <div className="col-xs-8 col-sm-6 col-md-4 mx-2">
+            <input
+              type="text"
+              className="form-control border-dark"
+              placeholder="search restaurant..."
+              value={search}
+              onChange={(e) => handleSearch(e.target.value)}
+            ></input>
+          </div>
+          <button
+            className="col-1 btn btn-light mx-2 border-dark rounded-5 filterbutton"
+            onClick={() => setAllList(list)}
+          >
+            All
+          </button>
           <button
             className="col-1 btn btn-light mx-2 border-dark rounded-5 filterbutton"
             onClick={() =>

@@ -28,7 +28,7 @@ const Cart = () => {
         </button>
       )}
       <div className="row align-items-start justify-content-between  ">
-        <div className="col-7">
+        <div className="col-xs-10 col-sm-10 col-md-7">
           {cartItem.map((x) => (
             <div className="row border-0 py-2 bg-light">
               <div className="col-6">
@@ -36,7 +36,7 @@ const Cart = () => {
                 <p className="my-0">
                   ₹ {x.price / 100 || x.defaultPrice / 100}
                 </p>
-                <div className="row align-items-center justify-content-start text-center  px-2">
+                <div className="row align-items-center justify-content-start text-center my-2 px-2">
                   <button
                     className="col-2 btn  border"
                     onClick={() => handleDecrease(x)}
@@ -59,7 +59,7 @@ const Cart = () => {
           ))}
         </div>
         {cartItem.length > 0 && (
-          <div className="col-4 border-0 bg-light py-3">
+          <div className="col-xs-10 col-sm-10 col-md-4 border-0 bg-light py-3">
             <h2 className="text-center">Order Summary</h2>
             <div className="d-flex justify-content-between   ">
               <p>Subtotal</p>

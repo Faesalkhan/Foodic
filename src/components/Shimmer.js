@@ -1,8 +1,9 @@
 const Shimmer = () => {
   return (
     <div className="container bodycontainer">
-      <div className="row mb-3 justify-content-center my-4">
+      <div className="row justify-content-center my-4">
         <div className="col-4 mx-2 element-displaying "></div>
+        <div className="col-1 mx-2 element-displaying rounded-5 filterbutton "></div>
         <div className="col-1 mx-2 element-displaying rounded-5 filterbutton "></div>
         <div className="col-1 mx-2 element-displaying rounded-5 filterbutton "></div>
       </div>

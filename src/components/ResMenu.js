@@ -46,7 +46,7 @@ const ResMenu = () => {
   return (
     <div className="container">
       <div className="row">
-        <div className="col-5">
+        <div className="col-xs-12 col-sm-10 col-md-5">
           <h1>{hotel?.name}</h1>
           <p className="my-0">
             {hotel?.cuisines && hotel?.cuisines.join(", ")}
@@ -55,10 +55,10 @@ const ResMenu = () => {
             {hotel?.areaName}, {hotel?.sla?.lastMileTravelString}
           </p>
         </div>
-        <div className="col-xs-2 col-sm-2 col-lg-1 mt-2">
+        <div className="col-xs-6 col-sm-2 col-lg-1 mt-2">
           <div className="row border">
-            <div className="col-12 border-bottom">⭐{hotel?.avgRating}</div>
-            <p className="col-12">{hotel?.totalRatingsString}</p>
+            <div className="col border-bottom">⭐{hotel?.avgRating}</div>
+            <p className="col">{hotel?.totalRatingsString}</p>
           </div>
         </div>
         <p className="border-bottom pb-3">

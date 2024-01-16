@@ -8,7 +8,7 @@ const ResCard = (props) => {
   return (
     <Link
       to={"/restaurant/" + id}
-      className="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 text-decoration-none text-dark card border-0"
+      className="col-xs-8 col-sm-6 col-md-4 col-lg-3 col-xl-2 text-decoration-none text-dark card border-0"
     >
       <img src={LIST_IMG + cloudinaryImageId} className="cardimg" />
       <h5 className="my-0">{name}</h5>

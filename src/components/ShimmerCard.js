@@ -1,10 +1,10 @@
 const ShimmerCard = () => {
   return (
-    <div className="container">
+    <div className="container menu-shimmer">
       <div className="row ">
-        <div className="col-5">
+        <div className="col-xs-6 col-sm-4">
           <div className="row">
-            <div className="col-7 m-2 element-displaying-menu"></div>
+            <div className="col-7  m-2 element-displaying-menu"></div>
             <div className="col-7 m-2 element-displaying-menu "></div>
             <div className="col-7 m-2 element-displaying-menu"></div>
           </div>

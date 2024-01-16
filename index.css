@@ -6,11 +6,13 @@
 }
 .cardimg{
     width: 100%;
-    height: 30vh;
-    object-fit: cover;
+    height: 35vh;
 }
 @media screen and (max-width : 991px){
     .bodycontainer .filterbutton{
+        display: none;
+    }
+    .menu-shimmer .ratingShimmer{
         display: none;
     }
 }
