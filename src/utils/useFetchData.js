@@ -1,23 +1,28 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const useFetchData = (api_url) => {
-  const [listRest, setListRes] = useState([]);
-  const [allListRes, setAllListRes] = useState([]);
+  const [list, setList] = useState([]);
+  const [allList, setAlllist] = useState([]);
 
   useEffect(() => {
     fetchingData();
   }, []);
-
   const fetchingData = async () => {
-    const data = await fetch(api_url);
-    const json = await data.json();
-    setListRes(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setAllListRes(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
+    try {
+      const data = await fetch(api_url);
+      const json = await data.json();
+      setList(
+        json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+      );
+      setAlllist(
+        json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+      );
+    } catch (err) {
+      setList([]);
+      setAlllist([]);
+      console.log("error in useEffect " + err);
+    }
   };
-  return [listRest, allListRes];
+  return [list, allList];
 };
 export default useFetchData;
