@@ -9,10 +9,9 @@ const Bodyy = () => {
   const [search, setSearch] = useState("");
   const handleSearch = (ch) => {
     setSearch(ch);
-
     setAllList(
       list.filter((res) =>
-        res.info.name.toLowerCase().includes(search.toLowerCase())
+        res.info.name.toLowerCase().includes(ch.toLowerCase())
       )
     );
   };
