@@ -68,6 +68,14 @@ const Bodyy = () => {
           >
             3+
           </button>
+          <button
+            className="col-1 btn btn-light mx-2 border-dark rounded-5 filterbutton"
+            onClick={() =>
+              setAllList(list.filter((x) => x?.info?.veg === true))
+            }
+          >
+            veg
+          </button>
         </div>
         <div className="row">
           {(allList.length !== 0 ? allList : list).map((restaurant) => (
