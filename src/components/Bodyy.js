@@ -37,23 +37,23 @@ const Bodyy = () => {
     return (
       <div className="container bodycontainer">
         <div className="row justify-content-center my-4">
-          <div className="col-xs-8 col-sm-6 col-md-4 mx-2">
+          <div className="col-xs-8 col-sm-6 col-md-4 m-2">
             <input
               type="text"
-              className="form-control border-dark"
+              className="form-control border-dark rounded-5 filterbutton"
               placeholder="search restaurant..."
               value={search}
               onChange={(e) => handleSearch(e.target.value)}
             ></input>
           </div>
           <button
-            className="col-1 btn btn-light mx-2 border-dark rounded-5 filterbutton"
+            className="col-1 btn btn-light m-2 border-dark rounded-5 filterbutton btn-sm d-flex align-items-center justify-content-center"
             onClick={() => setAllList(list)}
           >
             All
           </button>
           <button
-            className="col-1 btn btn-light mx-2 border-dark rounded-5 filterbutton"
+            className="col-1 btn btn-light m-2 border-dark rounded-5 filterbutton btn-sm d-flex align-items-center justify-content-center"
             onClick={() =>
               setAllList(list.filter((res) => res.info.avgRating > 4))
             }
@@ -61,7 +61,7 @@ const Bodyy = () => {
             4+
           </button>
           <button
-            className="col-1 btn btn-light mx-2 border-dark rounded-5 filterbutton"
+            className="col-1 btn btn-light m-2 border-dark rounded-5 filterbutton btn-sm d-flex align-items-center justify-content-center"
             onClick={() =>
               setAllList(list.filter((res) => res.info.avgRating <= 4))
             }
@@ -69,7 +69,7 @@ const Bodyy = () => {
             3+
           </button>
           <button
-            className="col-1 btn btn-light mx-2 border-dark rounded-5 filterbutton"
+            className="col-1 btn btn-light m-2 border-dark rounded-5 filterbutton btn-sm d-flex align-items-center justify-content-center"
             onClick={() =>
               setAllList(list.filter((x) => x?.info?.veg === true))
             }
