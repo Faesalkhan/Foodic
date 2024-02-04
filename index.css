@@ -11,16 +11,13 @@
 .filterbutton{
     height: 30px;
 }
-.bodycontainer .filterbutton{
+.shimmercontainer .filterbutton{
     height: 30px;
 }
 @media screen and (max-width : 575px){
     .bodycontainer .filterbutton{
         height: 25px;
         font-size: 10px;
-    }
-    .bodycontainer .filterbutton{
-        height: 25px;
     }
     .menu-shimmer .ratingShimmer{
         display: none;
